@@ -1,0 +1,35 @@
+⚠️ This changelog contains breaking changes!
+
+Variable collection
+  mode 1
+    --spacing-spacing-100: 8;
+    --spacing-spacing-200: 16;
+    --spacing-spacing-300: 24;
+    --spacing-spacing-400: 32;
+    --spacing-spacing-700: 56;
+    --spacing-spacing-1000: 80;
+    --spacing-spacing-1300: 104;
+    --spacing-spacing-1600: 128;
+    --spacing-spacing-2000: 160;
+    --spacing-spacing-2200: 176;
+    --spacing-spacing-2300: 184;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-grey-200: #e6e5ea;
+    --color-grey-600: #817d92;
+    --color-grey-700: #54535b;
+    --color-grey-800: #24232c;
+    --color-grey-850: #18171f;
+    --color-yellow-300: #f8cd65;
+    --color-orange-400: #fb7c58;
+    --color-red-500: #f64a4a;
+    --color-green-200: #a4ffaf;
+    --color-grey-900: #14131b;
+    --color-grey-950: #08070b;
+
+Text Styles
+  default
+    --text-text-preset-1---jetbrains-mono-bold---32px---42px-line-height---0px-line-spacing: 2rem, 700, 42px, 0px
+    --text-text-preset-2---jetbrains-mono-bold---24px---32px-line-height---0px-line-spacing: 1.5rem, 700, 32px, 0px
+    --text-text-preset-3---jetbrains-mono-bold---18px---24px-line-height---0px-line-spacing: 1.125rem, 700, 24px, 0px
+    --text-text-preset-4---jetbrains-mono-bold---16px---20px-line-height---0px-line-spacing: 1rem, 700, 20px, 0px

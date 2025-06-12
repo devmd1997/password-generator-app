@@ -1,4 +1,5 @@
 /*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -7,8 +8,26 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: #f64a4a;
+    --color-orange-400: #fb7c58;
+    --color-yellow-300: #f8cd65;
+    --color-green-200: #a4ffaf;
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --spacing: 8px;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-grey-200: #e6e5ea;
+    --color-grey-600: #817d92;
+    --color-grey-700: #54535b;
+    --color-grey-800: #24232c;
+    --color-grey-850: #18171f;
+    --color-grey-900: #14131b;
+    --color-grey-950: #08070b;
+    --font-jet-brains: 'JetBrains Mono', monospace;
   }
 }
 @layer base {
@@ -163,12 +182,318 @@
   .contents {
     display: contents;
   }
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
+  .text-preset-1 {
+    font-size: 32px;
+    line-height: 43px;
+    letter-spacing: 0px;
+    font-weight: 700;
+  }
+  .text-preset-3 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    font-weight: 700;
+  }
+  .text-preset-4 {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-weight: 700;
+  }
+  .text-green-200 {
+    color: var(--color-green-200);
+  }
+  .text-grey-200 {
+    color: var(--color-grey-200);
+  }
+  .text-grey-600 {
+    color: var(--color-grey-600);
+  }
+  .lowercase {
+    text-transform: lowercase;
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .md\:text-preset-2 {
+    @media (width >= 768px) {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0px;
+      font-weight: 700;
+    }
+  }
+  .md\:text-preset-3 {
+    @media (width >= 768px) {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0px;
+      font-weight: 700;
+    }
+  }
+}
+@layer base {
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-grey-950);
+    font-family: var(--font-jet-brains);
+    color: var(--color-white);
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: calc(var(--spacing) * 3);
+      label {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0px;
+        font-weight: 700;
+        color: var(--color-grey-200);
+        @media (width >= 768px) {
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0px;
+          font-weight: 700;
+        }
+      }
+      input[type="checkbox"] {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        appearance: none;
+        border-style: var(--tw-border-style);
+        border-width: 2px;
+        border-color: var(--color-grey-200);
+        background-color: transparent;
+        transition-property: all;
+        transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+        transition-duration: var(--tw-duration, var(--default-transition-duration));
+        --tw-duration: 150ms;
+        transition-duration: 150ms;
+        --tw-ease: var(--ease-in-out);
+        transition-timing-function: var(--ease-in-out);
+      }
+      input[type="checkbox"]:checked {
+        border-color: var(--color-green-200);
+        background-color: var(--color-green-200);
+        background-image: url("./assets/images/icon-check.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+      }
+    }
+  }
+  button {
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--spacing) * 2);
+    background-color: var(--color-green-200);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 3);
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    color: var(--color-grey-800);
+    &:hover {
+      @media (hover: hover) {
+        border-style: var(--tw-border-style);
+        border-width: 2px;
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-green-200);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-green-200);
+      }
+    }
+    &:disabled {
+      cursor: not-allowed;
+    }
+    &:disabled {
+      border-style: var(--tw-border-style);
+      border-width: 2px;
+    }
+    &:disabled {
+      border-color: var(--color-grey-600);
+    }
+    &:disabled {
+      background-color: transparent;
+    }
+    &:disabled {
+      color: var(--color-grey-600);
+    }
+    @media (width >= 768px) {
+      gap: calc(var(--spacing) * 3);
+    }
+    @media (width >= 768px) {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0px;
+      font-weight: 700;
+    }
+    @media (width >= 1440px) {
+      gap: calc(var(--spacing) * 4);
+    }
+  }
+  input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    --thumb-size: 28px;
+    --track-height: 8px;
+    --value-percent-js: 0%;
+    height: var(--track-height);
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+    background-image: linear-gradient(90deg, var(--color-green-200) var(--value-percent-js), var(--color-grey-900) var(--value-percent-js));
+    background-size: 100% var(--track-height);
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    border-radius: calc(var(--tack-height) / 2);
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: var(--track-height);
+    width: 100%;
+    border-radius: calc(infinity * 1px);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    height: var(--thumb-size);
+    width: var(--thumb-size);
+    appearance: none;
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-grey-200);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 150ms;
+    transition-duration: 150ms;
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
+    margin-top: calc((var(--track-height) - var(--thumb-size)) / 2);
+  }
+}
+@layer components {
+  .content-layout {
+    margin-top: calc(var(--spacing) * 10);
+    display: flex;
+    width: 100%;
+    max-width: 540px;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 2);
+  }
+  .header {
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    color: var(--color-grey-600);
+  }
+  .password-output-text {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    color: var(--color-grey-700);
+    &[data-generated="true"] {
+      color: var(--color-grey-200);
+    }
+  }
+  .content-box {
+    background-color: var(--color-grey-800);
+    padding: calc(var(--spacing) * 2);
+    .primary-layout {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--spacing) * 4);
+    }
+    .row-element {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .row-element > *:last-child {
+      &:last-child {
+        color: var(--color-green-200);
+      }
+    }
+    .strength-output-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--color-grey-850);
+      padding-inline: calc(var(--spacing) * 4);
+      padding-block: calc(var(--spacing) * 3);
+      .strength-bars {
+        display: flex;
+        flex-direction: row;
+        gap: calc(var(--spacing) * 1);
+        .strength-bar {
+          --active-fill: transparent;
+          height: 28px;
+          width: 10px;
+          border-style: var(--tw-border-style);
+          border-width: 2px;
+          border-color: var(--color-grey-200);
+          background-color: var(--active-fill);
+          &[data-active="true"] {
+            --tw-border-style: none;
+            border-style: none;
+          }
+        }
+      }
+    }
   }
 }
 @property --tw-outline-style {
@@ -176,10 +501,26 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-outline-style: solid;
+      --tw-border-style: solid;
+      --tw-duration: initial;
+      --tw-ease: initial;
     }
   }
 }
